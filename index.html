@@ -1,13 +1,73 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>My Project</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cast and Attached Shadow Detection via Iterative Light and Geometry Reasoning</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>My Project</h1>
-  <p>Short description of the project.</p>
-  <p><a href="https://github.com/USERNAME/REPO">Code</a></p>
+  <div class="container">
+    <header class="hero">
+      <h1>Cast and Attached Shadow Detection via Iterative Light and Geometry Reasoning</h1>
+
+      <div class="authors">
+        <span>Shilin Hu</span>,
+        <span>Jingyi Xu</span>,
+        <span>Sagnik Das</span>,
+        <span>Dimitris Samaras</span>,
+        <span>Hieu Le</span>
+      </div>
+
+      <div class="institutions">
+        <div>Stony Brook University</div>
+        <div>UNC Charlotte</div>
+      </div>
+
+      <div class="links">
+        <a href="#" target="_blank">Paper</a>
+        <a href="#" target="_blank">Code</a>
+        <a href="#" target="_blank">Dataset</a>
+        <a href="#citation">BibTeX</a>
+      </div>
+    </header>
+
+    <section class="section">
+      <h2>Abstract</h2>
+      <p>
+        Shadows encode rich information about scene geometry and illumination, yet existing methods either predict a unified shadow mask or overlook attached shadows entirely. We propose a framework for jointly detecting cast and attached shadows through explicit physical modeling of light direction and surface geometry. Our approach builds a closed feedback loop between shadow detection and light estimation: updated light estimates with surface normals produce partial attached shadow maps that guide detection, while improved shadow predictions sharpen light estimation. To support training and evaluation, we introduce a dataset of 1,458 images with manually annotated cast and attached shadow masks sourced from three existing benchmarks. Experiments demonstrate that our physically grounded, iterative formulation outperforms prior methods, with at least a 33% reduction in attached BER, while maintaining strong full and cast performance.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Overview</h2>
+      <div class="figure-block">
+        <img src="assets/overview.png" alt="Method overview figure" />
+      </div>
+      <p class="caption">
+        Overview of the proposed iterative framework. A shadow detection module and a light estimation module refine each other through a closed feedback loop using surface normals and partial attached shadow cues.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Results</h2>
+      <div class="figure-block">
+        <img src="assets/results.png" alt="Qualitative and quantitative results" />
+      </div>
+      <p class="caption">
+        Representative results showing improved attached shadow detection while maintaining strong performance on cast and full-shadow predictions.
+      </p>
+    </section>
+
+    <section class="section" id="citation">
+      <h2>Citation</h2>
+      <pre><code>@inproceedings{hu2026shadow,
+  title={Cast and Attached Shadow Detection via Iterative Light and Geometry Reasoning},
+  author={Hu, Shilin and Xu, Jingyi and Das, Sagnik and Samaras, Dimitris and Le, Hieu},
+  booktitle={Conference Name},
+  year={2026}
+}</code></pre>
+    </section>
+  </div>
 </body>
 </html>
