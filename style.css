@@ -5,6 +5,7 @@
   --muted: #5b6472;
   --line: #e5e7eb;
   --accent: #1d4ed8;
+  --accent-dark: #1e40af;
   --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
 }
 
@@ -19,7 +20,9 @@ html {
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background: var(--bg);
+  background:
+    radial-gradient(circle at top, rgba(29, 78, 216, 0.08), transparent 30%),
+    var(--bg);
   color: var(--text);
   line-height: 1.7;
 }
@@ -38,9 +41,22 @@ body {
 }
 
 .hero {
-  padding: 48px 40px;
+  padding: 52px 40px 44px;
   text-align: center;
   margin-bottom: 28px;
+}
+
+.venue {
+  display: inline-block;
+  margin: 0 0 14px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(29, 78, 216, 0.08);
+  color: var(--accent-dark);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .hero h1 {
@@ -48,6 +64,7 @@ body {
   font-size: 2.4rem;
   line-height: 1.2;
   font-weight: 700;
+  text-wrap: balance;
 }
 
 .authors {
@@ -57,7 +74,19 @@ body {
 
 .institutions {
   color: var(--muted);
-  margin-bottom: 24px;
+  margin-bottom: 18px;
+}
+
+.site-note {
+  margin: 0 auto 22px;
+  max-width: 760px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  color: #9a3412;
+  font-size: 0.95rem;
+  line-height: 1.5;
 }
 
 .links {
@@ -67,19 +96,36 @@ body {
   gap: 12px;
 }
 
+.links a,
+.link-disabled {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
 .links a {
   text-decoration: none;
   color: white;
   background: var(--accent);
-  padding: 10px 18px;
-  border-radius: 999px;
-  font-weight: 600;
-  transition: transform 0.15s ease, opacity 0.15s ease;
+  transition: transform 0.15s ease, opacity 0.15s ease, background 0.15s ease;
 }
 
 .links a:hover {
   transform: translateY(-1px);
-  opacity: 0.92;
+  opacity: 0.96;
+  background: var(--accent-dark);
+}
+
+.link-disabled {
+  color: var(--muted);
+  background: #eef2f7;
+  border: 1px solid var(--line);
+  cursor: default;
+  user-select: none;
 }
 
 .section {
@@ -155,5 +201,10 @@ code {
 
   .authors {
     font-size: 1rem;
+  }
+
+  .links a,
+  .link-disabled {
+    width: 100%;
   }
 }
