@@ -71,7 +71,7 @@
       </div>
 
       <p>
-        Shadows encode rich information about scene geometry and illumination, yet existing methods either predict a unified shadow mask or overlook attached shadows entirely. We propose a framework for jointly detecting cast and attached shadows through explicit physical modeling of light direction and surface geometry. Our approach builds a closed feedback loop between shadow detection and light estimation: updated light estimates with surface normals produce partial attached shadow maps that guide detection, while improved shadow predictions sharpen light estimation. To support training and evaluation, we introduce a dataset of 1,458 images with manually annotated cast and attached shadow masks sourced from three existing benchmarks. Experiments demonstrate that our physically grounded, iterative formulation outperforms prior methods, with at least a 33% reduction in attached BER, while maintaining strong full and cast performance.
+        Shadows encode rich information about scene geometry and illumination, yet existing methods either predict a unified shadow mask or overlook attached shadows entirely. We propose a framework for jointly detecting cast and attached shadows through explicit physical modeling of light direction and surface geometry. Our approach builds a closed feedback loop between shadow detection and light estimation: updated light estimates with surface normals produce partial attached shadow maps that guide detection, while improved shadow predictions sharpen light estimation. Experiments demonstrate that our physically grounded, iterative formulation outperforms prior methods, with at least a 33% reduction in attached BER, while maintaining strong full and cast performance.
       </p>
     </section>
 
@@ -83,7 +83,7 @@
       </div>
 
       <p>
-        We introduce the first dataset curated for cast and attached shadow detection, with 1,458 images collected from three benchmarks. Each image includes a normal map, light direction, and cast, attached, and undefined shadow annotations.
+        To support training and evaluation, we introduce the first dataset curated for cast and attached shadow detection, with 1,458 images collected from three benchmarks. Each image includes a normal map, light direction, and cast, attached, and undefined shadow annotations.
       </p>
     </section>
 
