@@ -76,60 +76,40 @@
     </section>
 
     <section class="section">
-      <h2>Dataset</h2>
-
-      <div class="figure-block">
-        <img src="assets/dataset.png" alt="Dataset examples and annotations" />
-      </div>
-
-      <p>
-        To support training and evaluation, we introduce the first dataset curated for cast and attached shadow detection, with 1,458 images collected from three benchmarks. Each image includes a normal map, light direction, and cast, attached, and undefined shadow annotations.
-      </p>
-    </section>
-
-    <section class="section">
       <h2>Results</h2>
 
       <div class="results-group">
         <h3>Quantitative Results</h3>
-        <div class="placeholder wide-placeholder">
-          <span>Quantitative results figure / table placeholder</span>
+        <div class="plain-figure-block">
+          <img src="assets/quan.png" alt="Quantitative comparison results" class="plain-figure-image" />
         </div>
-        <p class="placeholder-text">
-          Placeholder text for quantitative results. This area can summarize benchmark comparisons, key metrics, and the main quantitative takeaway.
+        <p class="caption">
+          Quantitative comparison with state-of-the-art methods on our dataset. We report BER↓ and F1↑ for full, cast, and attached shadows. Methods fine-tuned on our training set are marked with †. Best results are in bold.
         </p>
       </div>
 
       <div class="results-group">
         <h3>Qualitative Results</h3>
 
-        <div class="carousel-block">
-          <div class="placeholder carousel-placeholder">
-            <span>Qualitative image carousel placeholder</span>
-          </div>
-          <p class="caption">
-            Placeholder caption for the qualitative image carousel.
-          </p>
+        <div class="plain-figure-block">
+          <img src="assets/qual.png" alt="Qualitative comparison results" class="plain-figure-image" />
         </div>
-
-        <div class="carousel-block">
-          <div class="placeholder carousel-placeholder">
-            <span>TimeLapse GIF carousel placeholder</span>
-          </div>
-          <p class="caption">
-            Placeholder caption for the TimeLapse GIF carousel.
-          </p>
-        </div>
-
-        <div class="carousel-block">
-          <div class="placeholder carousel-placeholder">
-            <span>ViSha GIF carousel placeholder</span>
-          </div>
-          <p class="caption">
-            Placeholder caption for the ViSha GIF carousel.
-          </p>
-        </div>
+        <p class="caption">
+          Qualitative comparison of our method with retrained BDRAR, FSDNet, FDRNet, and SILT on our dataset. Predicted masks are overlaid on the input image (green: attached, red: cast). Our physics-grounded iterative framework produces more accurate attached-shadow boundaries.
+        </p>
       </div>
+    </section>
+
+    <section class="section">
+      <h2>Dataset</h2>
+
+      <div class="plain-figure-block">
+        <img src="assets/dataset.png" alt="Dataset examples and annotations" class="plain-figure-image" />
+      </div>
+
+      <p>
+        To support training and evaluation, we introduce the first dataset curated for cast and attached shadow detection, with 1,458 images collected from three benchmarks. Each image includes a normal map, light direction, and cast, attached, and undefined shadow annotations.
+      </p>
     </section>
 
     <section class="section" id="citation">
