@@ -26,7 +26,7 @@
       </div>
 
       <div class="site-note">
-        This project page is currently under construction.
+        This project page is being actively updated. Stay tuned.
       </div>
 
       <div class="links">
@@ -105,7 +105,7 @@
           We further test our model on video shadow datasets to examine cross-dataset generalization beyond our image-based benchmark. On SBU-TimeLapse, which mainly contains static scenes, and ViSha, which includes more dynamic scenes and motion, our method still produces meaningful cast and attached shadow separation without dataset-specific retraining.
         </p>
 
-        <div class="cross-dataset-grid">
+        <div class="cross-dataset-stack">
           <div class="carousel-card">
             <h4>SBU-TimeLapse <span>(static scene)</span></h4>
 
@@ -127,8 +127,6 @@
                 &#10095;
               </button>
             </div>
-
-            <p class="caption" id="carousel-caption-sbu">pottedplant.gif</p>
           </div>
 
           <div class="carousel-card">
@@ -152,8 +150,6 @@
                 &#10095;
               </button>
             </div>
-
-            <p class="caption" id="carousel-caption-visha">jump1.gif</p>
           </div>
         </div>
       </div>
@@ -189,7 +185,6 @@
     const carousels = {
       sbu: {
         imageId: "carousel-image-sbu",
-        captionId: "carousel-caption-sbu",
         files: [
           "pottedplant.gif",
           "brick.gif",
@@ -200,7 +195,6 @@
       },
       visha: {
         imageId: "carousel-image-visha",
-        captionId: "carousel-caption-visha",
         files: [
           "jump1.gif",
           "cup.gif",
@@ -222,11 +216,9 @@
       const index = carouselState[name];
       const file = config.files[index];
       const image = document.getElementById(config.imageId);
-      const caption = document.getElementById(config.captionId);
 
       image.src = config.basePath + file;
       image.alt = file.replace(".gif", "");
-      caption.textContent = file;
     }
 
     function stepCarousel(name, direction) {
