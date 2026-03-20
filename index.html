@@ -12,16 +12,17 @@
       <h1>Cast and Attached Shadow Detection via Iterative Light and Geometry Reasoning</h1>
 
       <div class="authors">
-        <span>Shilin Hu</span>,
-        <span>Jingyi Xu</span>,
-        <span>Sagnik Das</span>,
-        <span>Dimitris Samaras</span>,
-        <span>Hieu Le</span>
+        <span>Shilin Hu<sup>1</sup></span>,
+        <span>Jingyi Xu<sup>1</sup></span>,
+        <span>Sagnik Das<sup>1</sup></span>,
+        <span>Dimitris Samaras<sup>1</sup></span>,
+        <span>Hieu Le<sup>2</sup></span>
       </div>
 
-      <div class="institutions">
-        <div>Stony Brook University</div>
-        <div>UNC Charlotte</div>
+      <div class="institutions-inline">
+        <span><sup>1</sup>Stony Brook University</span>
+        <span class="inst-sep">|</span>
+        <span><sup>2</sup>UNC Charlotte</span>
       </div>
 
       <div class="site-note">
@@ -37,42 +38,101 @@
     </header>
 
     <section class="section">
+      <h2>Motivation</h2>
+
+      <div class="panel-two">
+        <div class="placeholder media-placeholder">
+          <span>Motivation image A placeholder</span>
+        </div>
+        <div class="placeholder media-placeholder">
+          <span>Motivation image B placeholder</span>
+        </div>
+      </div>
+
+      <p class="placeholder-text">
+        Placeholder text for the motivation section. Briefly explain why separating cast and attached shadows matters, and how they provide different cues for scene understanding, geometry reasoning, and downstream applications.
+      </p>
+    </section>
+
+    <section class="section">
       <h2>Abstract</h2>
+
+      <div class="figure-block">
+        <img src="assets/overview.png" alt="Framework overview figure" />
+      </div>
+
       <p>
         Shadows encode rich information about scene geometry and illumination, yet existing methods either predict a unified shadow mask or overlook attached shadows entirely. We propose a framework for jointly detecting cast and attached shadows through explicit physical modeling of light direction and surface geometry. Our approach builds a closed feedback loop between shadow detection and light estimation: updated light estimates with surface normals produce partial attached shadow maps that guide detection, while improved shadow predictions sharpen light estimation. To support training and evaluation, we introduce a dataset of 1,458 images with manually annotated cast and attached shadow masks sourced from three existing benchmarks. Experiments demonstrate that our physically grounded, iterative formulation outperforms prior methods, with at least a 33% reduction in attached BER, while maintaining strong full and cast performance.
       </p>
     </section>
 
     <section class="section">
-      <h2>Overview</h2>
-      <div class="figure-block">
-        <img src="assets/overview.png" alt="Method overview figure" />
+      <h2>Dataset</h2>
+
+      <div class="placeholder wide-placeholder">
+        <span>Dataset figure placeholder</span>
       </div>
-      <p class="caption">
-        Overview of the proposed iterative framework. A shadow detection module and a light estimation module refine each other through a closed feedback loop using surface normals and partial attached shadow cues.
+
+      <p class="placeholder-text">
+        Placeholder text for the dataset section. This can summarize the dataset composition, annotation types, source benchmarks, and example statistics or curation details.
       </p>
     </section>
 
     <section class="section">
       <h2>Results</h2>
-      <div class="figure-block">
-        <img src="assets/results.png" alt="Qualitative and quantitative results" />
+
+      <div class="results-group">
+        <h3>Quantitative Results</h3>
+        <div class="placeholder wide-placeholder">
+          <span>Quantitative results figure / table placeholder</span>
+        </div>
+        <p class="placeholder-text">
+          Placeholder text for quantitative results. This area can summarize benchmark comparisons, key metrics, and the main quantitative takeaway.
+        </p>
       </div>
-      <p class="caption">
-        Representative results showing improved attached shadow detection while maintaining strong performance on cast and full-shadow predictions.
-      </p>
+
+      <div class="results-group">
+        <h3>Qualitative Results</h3>
+
+        <div class="carousel-block">
+          <div class="placeholder carousel-placeholder">
+            <span>Qualitative image carousel placeholder</span>
+          </div>
+          <p class="caption">
+            Placeholder caption for the qualitative image carousel.
+          </p>
+        </div>
+
+        <div class="carousel-block">
+          <div class="placeholder carousel-placeholder">
+            <span>TimeLapse GIF carousel placeholder</span>
+          </div>
+          <p class="caption">
+            Placeholder caption for the TimeLapse GIF carousel.
+          </p>
+        </div>
+
+        <div class="carousel-block">
+          <div class="placeholder carousel-placeholder">
+            <span>ViSha GIF carousel placeholder</span>
+          </div>
+          <p class="caption">
+            Placeholder caption for the ViSha GIF carousel.
+          </p>
+        </div>
+      </div>
     </section>
 
     <section class="section" id="citation">
       <h2>Citation</h2>
-      <pre><code>@misc{hu2025physicsgroundedattachedshadowdetection,
-  title={Physics-Grounded Attached Shadow Detection Using Approximate 3D Geometry and Light Direction}, 
-  author={Shilin Hu and Jingyi Xu and Sagnik Das and Dimitris Samaras and Hieu Le},
-  year={2025},
-  eprint={2512.06179},
-  archivePrefix={arXiv},
-  primaryClass={cs.CV},
-  url={https://arxiv.org/abs/2512.06179}, 
+      <pre><code>@misc{hu2026castattachedshadowdetection,
+      title={Cast and Attached Shadow Detection via Iterative Light and Geometry Reasoning}, 
+      author={Shilin Hu and Jingyi Xu and Sagnik Das and Dimitris Samaras and Hieu Le},
+      year={2026},
+      eprint={2512.06179},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2512.06179}, 
 }</code></pre>
     </section>
   </div>
