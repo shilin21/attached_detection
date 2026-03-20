@@ -151,6 +151,16 @@ body {
   font-size: 1.18rem;
 }
 
+.section h4 {
+  margin: 0 0 14px;
+  font-size: 1.08rem;
+}
+
+.section h4 span {
+  color: var(--muted);
+  font-weight: 400;
+}
+
 .figure-block {
   margin: 20px 0 12px;
   text-align: center;
@@ -175,10 +185,19 @@ body {
   max-width: 100%;
   height: auto;
   display: block;
+  margin: 0 auto;
   border: none;
   border-radius: 0;
   background: transparent;
   box-shadow: none;
+}
+
+.figure-70 .plain-figure-image {
+  width: 70%;
+}
+
+.figure-90 .plain-figure-image {
+  width: 90%;
 }
 
 .motivation-layout {
@@ -210,37 +229,82 @@ body {
   background: transparent;
 }
 
-.placeholder {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: var(--muted);
-  background: var(--placeholder-bg);
-  border: 1.5px dashed var(--placeholder-border);
-  border-radius: 14px;
-  padding: 18px;
-  font-weight: 600;
-}
-
-.wide-placeholder {
-  min-height: 320px;
-  margin: 20px 0 14px;
-}
-
-.carousel-placeholder {
-  min-height: 260px;
-}
-
-.placeholder-text {
-  color: var(--muted);
-  margin-top: 8px;
-}
-
 .results-group + .results-group {
   margin-top: 28px;
   padding-top: 22px;
   border-top: 1px solid var(--line);
+}
+
+.cross-dataset-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 18px;
+}
+
+.carousel-card {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: linear-gradient(180deg, #fbfdff 0%, #f8fbff 100%);
+  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.05);
+  padding: 18px 18px 14px;
+}
+
+.gif-carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-frame {
+  width: 100%;
+  min-height: 290px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 28px;
+}
+
+.carousel-image {
+  width: 100%;
+  max-height: 340px;
+  object-fit: contain;
+  display: block;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--accent-dark);
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.15);
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 2;
+  transition: transform 0.15s ease, background 0.15s ease, opacity 0.15s ease;
+}
+
+.carousel-btn:hover {
+  background: #ffffff;
+  transform: translateY(-50%) scale(1.04);
+}
+
+.carousel-btn.prev {
+  left: 0;
+}
+
+.carousel-btn.next {
+  right: 0;
 }
 
 .caption {
@@ -262,6 +326,12 @@ pre {
 
 code {
   font-family: "Courier New", Courier, monospace;
+}
+
+@media (max-width: 900px) {
+  .cross-dataset-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 700px) {
@@ -312,13 +382,28 @@ code {
     min-height: 240px;
   }
 
-  .links a,
-  .link-disabled {
+  .figure-70 .plain-figure-image,
+  .figure-90 .plain-figure-image {
     width: 100%;
   }
 
-  .wide-placeholder,
-  .carousel-placeholder {
+  .carousel-frame {
     min-height: 220px;
+    padding: 0 22px;
+  }
+
+  .carousel-image {
+    max-height: 260px;
+  }
+
+  .carousel-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 1.15rem;
+  }
+
+  .links a,
+  .link-disabled {
+    width: 100%;
   }
 }
