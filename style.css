@@ -235,9 +235,9 @@ body {
   border-top: 1px solid var(--line);
 }
 
-.cross-dataset-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+.cross-dataset-stack {
+  display: flex;
+  flex-direction: column;
   gap: 22px;
   margin-top: 18px;
 }
@@ -259,7 +259,7 @@ body {
 
 .carousel-frame {
   width: 100%;
-  min-height: 290px;
+  min-height: 320px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -268,7 +268,7 @@ body {
 
 .carousel-image {
   width: 100%;
-  max-height: 340px;
+  max-height: 420px;
   object-fit: contain;
   display: block;
   border-radius: 12px;
@@ -326,12 +326,6 @@ pre {
 
 code {
   font-family: "Courier New", Courier, monospace;
-}
-
-@media (max-width: 900px) {
-  .cross-dataset-grid {
-    grid-template-columns: 1fr;
-  }
 }
 
 @media (max-width: 700px) {
