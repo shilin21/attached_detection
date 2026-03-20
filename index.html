@@ -80,7 +80,7 @@
 
       <div class="results-group">
         <h3>Quantitative Results</h3>
-        <div class="plain-figure-block">
+        <div class="plain-figure-block figure-70">
           <img src="assets/quan.png" alt="Quantitative comparison results" class="plain-figure-image" />
         </div>
         <p class="caption">
@@ -98,12 +98,71 @@
           Qualitative comparison of our method with retrained BDRAR, FSDNet, FDRNet, and SILT on our dataset. Predicted masks are overlaid on the input image (green: attached, red: cast). Our physics-grounded iterative framework produces more accurate attached-shadow boundaries.
         </p>
       </div>
+
+      <div class="results-group">
+        <h3>Cross-dataset Performance</h3>
+        <p>
+          We further test our model on video shadow datasets to examine cross-dataset generalization beyond our image-based benchmark. On SBU-TimeLapse, which mainly contains static scenes, and ViSha, which includes more dynamic scenes and motion, our method still produces meaningful cast and attached shadow separation without dataset-specific retraining.
+        </p>
+
+        <div class="cross-dataset-grid">
+          <div class="carousel-card">
+            <h4>SBU-TimeLapse <span>(static scene)</span></h4>
+
+            <div class="gif-carousel" data-carousel="sbu">
+              <button class="carousel-btn prev" type="button" aria-label="Previous SBU-TimeLapse GIF">
+                &#10094;
+              </button>
+
+              <div class="carousel-frame">
+                <img
+                  src="assets/gif/SBU-TimeLapse/pottedplant.gif"
+                  alt="SBU-TimeLapse example"
+                  class="carousel-image"
+                  id="carousel-image-sbu"
+                />
+              </div>
+
+              <button class="carousel-btn next" type="button" aria-label="Next SBU-TimeLapse GIF">
+                &#10095;
+              </button>
+            </div>
+
+            <p class="caption" id="carousel-caption-sbu">pottedplant.gif</p>
+          </div>
+
+          <div class="carousel-card">
+            <h4>ViSha <span>(dynamic scene)</span></h4>
+
+            <div class="gif-carousel" data-carousel="visha">
+              <button class="carousel-btn prev" type="button" aria-label="Previous ViSha GIF">
+                &#10094;
+              </button>
+
+              <div class="carousel-frame">
+                <img
+                  src="assets/gif/ViSha/jump1.gif"
+                  alt="ViSha example"
+                  class="carousel-image"
+                  id="carousel-image-visha"
+                />
+              </div>
+
+              <button class="carousel-btn next" type="button" aria-label="Next ViSha GIF">
+                &#10095;
+              </button>
+            </div>
+
+            <p class="caption" id="carousel-caption-visha">jump1.gif</p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="section">
       <h2>Dataset</h2>
 
-      <div class="plain-figure-block">
+      <div class="plain-figure-block figure-90">
         <img src="assets/dataset.png" alt="Dataset examples and annotations" class="plain-figure-image" />
       </div>
 
@@ -125,5 +184,69 @@
 }</code></pre>
     </section>
   </div>
+
+  <script>
+    const carousels = {
+      sbu: {
+        imageId: "carousel-image-sbu",
+        captionId: "carousel-caption-sbu",
+        files: [
+          "pottedplant.gif",
+          "brick.gif",
+          "sunclock.gif",
+          "timelapse.gif"
+        ],
+        basePath: "assets/gif/SBU-TimeLapse/"
+      },
+      visha: {
+        imageId: "carousel-image-visha",
+        captionId: "carousel-caption-visha",
+        files: [
+          "jump1.gif",
+          "cup.gif",
+          "food.gif",
+          "sheep-6.gif",
+          "walk1.gif"
+        ],
+        basePath: "assets/gif/ViSha/"
+      }
+    };
+
+    const carouselState = {
+      sbu: 0,
+      visha: 0
+    };
+
+    function updateCarousel(name) {
+      const config = carousels[name];
+      const index = carouselState[name];
+      const file = config.files[index];
+      const image = document.getElementById(config.imageId);
+      const caption = document.getElementById(config.captionId);
+
+      image.src = config.basePath + file;
+      image.alt = file.replace(".gif", "");
+      caption.textContent = file;
+    }
+
+    function stepCarousel(name, direction) {
+      const config = carousels[name];
+      const total = config.files.length;
+      carouselState[name] = (carouselState[name] + direction + total) % total;
+      updateCarousel(name);
+    }
+
+    document.querySelectorAll(".gif-carousel").forEach((carousel) => {
+      const name = carousel.dataset.carousel;
+      const prevBtn = carousel.querySelector(".carousel-btn.prev");
+      const nextBtn = carousel.querySelector(".carousel-btn.next");
+
+      prevBtn.addEventListener("click", () => stepCarousel(name, -1));
+      nextBtn.addEventListener("click", () => stepCarousel(name, 1));
+    });
+
+    updateCarousel("sbu");
+    updateCarousel("visha");
+  </script>
 </body>
 </html>
