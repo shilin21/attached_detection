@@ -3,14 +3,59 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cast and Attached Shadow Detection via Iterative Light and Geometry Reasoning</title>
+
+  <title>
+    Cast and Attached Shadow Detection via Iterative Light and Geometry Reasoning
+  </title>
+
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <div class="container">
-    <header class="hero">
-      <h1>Cast and Attached Shadow Detection via Iterative Light and Geometry Reasoning</h1>
 
+    <!-- =========================================================
+         Header
+    ========================================================== -->
+    <header class="hero">
+
+      <!-- Logos -->
+      <div class="hero-logos">
+
+        <div class="logo-slot">
+          <img
+            src="assets/SBU horz_2clr_rgb_300ppi.png"
+            alt="Stony Brook University"
+            class="uni-logo sbu-logo"
+          />
+        </div>
+
+        <div class="logo-slot eccv-slot">
+          <img
+            src="assets/ECCV_2026_Logo.svg"
+            alt="ECCV 2026"
+            class="eccv-logo"
+          />
+        </div>
+
+        <div class="logo-slot">
+          <img
+            src="assets/UNC-horizontal.png"
+            alt="UNC Charlotte"
+            class="uni-logo unc-logo"
+          />
+        </div>
+
+      </div>
+
+
+      <!-- Paper title -->
+      <h1>
+        Cast and Attached Shadow Detection via Iterative Light and Geometry Reasoning
+      </h1>
+
+
+      <!-- Authors -->
       <div class="authors">
         <span>Shilin Hu<sup>1</sup></span>,
         <span>Jingyi Xu<sup>1</sup></span>,
@@ -19,28 +64,68 @@
         <span>Hieu Le<sup>2</sup></span>
       </div>
 
+
+      <!-- Institutions -->
       <div class="institutions-inline">
         <span><sup>1</sup>Stony Brook University</span>
         <span class="inst-sep">|</span>
         <span><sup>2</sup>UNC Charlotte</span>
       </div>
 
-      <div class="site-note">
-        This project page is being actively updated. Stay tuned.
+
+      <!-- Project updates -->
+      <div class="site-updates">
+        <ul>
+          <li>
+            <strong>Our paper has been accepted to ECCV 2026! 🎉</strong>
+          </li>
+
+          <li>
+            This project page is being actively updated. Stay tuned!
+          </li>
+        </ul>
       </div>
 
+
+      <!-- Links -->
       <div class="links">
-        <a href="https://arxiv.org/abs/2512.06179" target="_blank" rel="noopener noreferrer">Paper</a>
-        <a href="https://github.com/cvlab-stonybrook/ShadowDetectionAttached" target="_blank" rel="noopener noreferrer">Code</a>
-        <span class="link-disabled" aria-disabled="true">Dataset (TBA)</span>
-        <a href="#citation">BibTeX</a>
+
+        <a
+          href="https://arxiv.org/abs/2512.06179"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Paper
+        </a>
+
+        <a
+          href="https://github.com/cvlab-stonybrook/ShadowDetectionAttached"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Code
+        </a>
+
+        <span class="link-disabled" aria-disabled="true">
+          Dataset (TBA)
+        </span>
+
+        <a href="#citation">
+          BibTeX
+        </a>
+
       </div>
     </header>
 
+
+    <!-- =========================================================
+         Motivation
+    ========================================================== -->
     <section class="section">
       <h2>Motivation</h2>
 
       <div class="motivation-layout">
+
         <div class="motivation-card motivation-card-large">
           <img
             src="assets/motiv1.png"
@@ -56,61 +141,130 @@
             class="motivation-image"
           />
         </div>
+
       </div>
 
       <p>
-        Shadows are not all the same. Cast shadows describe spatial relationships between objects and surfaces, while attached shadows reveal local shape and orientation directly on object surfaces. Most existing methods still treat shadows as a single category or overlook attached shadows, which limits both physical understanding and downstream use. Our goal is to explicitly separate these two shadow types because they provide complementary information for geometry reasoning and shadow removal.
+        Shadows are not all the same. Cast shadows describe spatial relationships
+        between objects and surfaces, while attached shadows reveal local shape
+        and orientation directly on object surfaces. Most existing methods still
+        treat shadows as a single category or overlook attached shadows, which
+        limits both physical understanding and downstream use. Our goal is to
+        explicitly separate these two shadow types because they provide
+        complementary information for geometry reasoning and shadow removal.
       </p>
     </section>
 
+
+    <!-- =========================================================
+         Abstract
+    ========================================================== -->
     <section class="section">
       <h2>Abstract</h2>
 
       <div class="figure-block">
-        <img src="assets/overview.png" alt="Framework overview figure" />
+        <img
+          src="assets/overview.png"
+          alt="Framework overview figure"
+        />
       </div>
 
       <p>
-        Shadows encode rich information about scene geometry and illumination, yet existing methods either predict a unified shadow mask or overlook attached shadows entirely. We propose a framework for jointly detecting cast and attached shadows through explicit physical modeling of light direction and surface geometry. Our approach builds a closed feedback loop between shadow detection and light estimation: updated light estimates with surface normals produce partial attached shadow maps that guide detection, while improved shadow predictions sharpen light estimation. Experiments demonstrate that our physically grounded, iterative formulation outperforms prior methods, with at least a 33% reduction in attached BER, while maintaining strong full and cast performance.
+        Shadows encode rich information about scene geometry and illumination,
+        yet existing methods either predict a unified shadow mask or overlook
+        attached shadows entirely. We propose a framework for jointly detecting
+        cast and attached shadows through explicit physical modeling of light
+        direction and surface geometry. Our approach builds a closed feedback
+        loop between shadow detection and light estimation: updated light
+        estimates with surface normals produce partial attached shadow maps that
+        guide detection, while improved shadow predictions sharpen light
+        estimation. Experiments demonstrate that our physically grounded,
+        iterative formulation outperforms prior methods, with at least a 33%
+        reduction in attached BER, while maintaining strong full and cast
+        performance.
       </p>
     </section>
 
+
+    <!-- =========================================================
+         Results
+    ========================================================== -->
     <section class="section">
       <h2>Results</h2>
 
+
+      <!-- Quantitative Results -->
       <div class="results-group">
         <h3>Quantitative Results</h3>
+
         <div class="plain-figure-block figure-70">
-          <img src="assets/quan.png" alt="Quantitative comparison results" class="plain-figure-image" />
+          <img
+            src="assets/quan.png"
+            alt="Quantitative comparison results"
+            class="plain-figure-image"
+          />
         </div>
+
         <p class="caption">
-          Quantitative comparison with state-of-the-art methods on our dataset. We report BER↓ and F1↑ for full, cast, and attached shadows. Methods fine-tuned on our training set are marked with †. Best results are in bold.
+          Quantitative comparison with state-of-the-art methods on our dataset.
+          We report BER↓ and F1↑ for full, cast, and attached shadows. Methods
+          fine-tuned on our training set are marked with †. Best results are in bold.
         </p>
       </div>
 
+
+      <!-- Qualitative Results -->
       <div class="results-group">
         <h3>Qualitative Results</h3>
 
         <div class="plain-figure-block">
-          <img src="assets/qual.png" alt="Qualitative comparison results" class="plain-figure-image" />
+          <img
+            src="assets/qual.png"
+            alt="Qualitative comparison results"
+            class="plain-figure-image"
+          />
         </div>
+
         <p class="caption">
-          Qualitative comparison of our method with retrained BDRAR, FSDNet, FDRNet, and SILT on our dataset. Predicted masks are overlaid on the input image (green: attached, red: cast). Our physics-grounded iterative framework produces more accurate attached-shadow boundaries.
+          Qualitative comparison of our method with retrained BDRAR, FSDNet,
+          FDRNet, and SILT on our dataset. Predicted masks are overlaid on the
+          input image (green: attached, red: cast). Our physics-grounded iterative
+          framework produces more accurate attached-shadow boundaries.
         </p>
       </div>
 
+
+      <!-- Cross-dataset Performance -->
       <div class="results-group">
         <h3>Cross-dataset Performance</h3>
+
         <p>
-          We further test our model on video shadow datasets to examine cross-dataset generalization beyond our image-based benchmark. On SBU-TimeLapse, which mainly contains static scenes, and ViSha, which includes more dynamic scenes and motion, our method still produces meaningful cast and attached shadow separation without dataset-specific retraining.
+          We further test our model on video shadow datasets to examine
+          cross-dataset generalization beyond our image-based benchmark.
+          On SBU-TimeLapse, which mainly contains static scenes, and ViSha,
+          which includes more dynamic scenes and motion, our method still
+          produces meaningful cast and attached shadow separation without
+          dataset-specific retraining.
         </p>
 
+
         <div class="cross-dataset-stack">
+
+          <!-- SBU-TimeLapse -->
           <div class="carousel-card">
-            <h4>SBU-TimeLapse <span>(static scene)</span></h4>
+
+            <h4>
+              SBU-TimeLapse
+              <span>(static scene)</span>
+            </h4>
 
             <div class="gif-carousel" data-carousel="sbu">
-              <button class="carousel-btn prev" type="button" aria-label="Previous SBU-TimeLapse GIF">
+
+              <button
+                class="carousel-btn prev"
+                type="button"
+                aria-label="Previous SBU-TimeLapse GIF"
+              >
                 &#10094;
               </button>
 
@@ -123,17 +277,33 @@
                 />
               </div>
 
-              <button class="carousel-btn next" type="button" aria-label="Next SBU-TimeLapse GIF">
+              <button
+                class="carousel-btn next"
+                type="button"
+                aria-label="Next SBU-TimeLapse GIF"
+              >
                 &#10095;
               </button>
+
             </div>
           </div>
 
+
+          <!-- ViSha -->
           <div class="carousel-card">
-            <h4>ViSha <span>(dynamic scene)</span></h4>
+
+            <h4>
+              ViSha
+              <span>(dynamic scene)</span>
+            </h4>
 
             <div class="gif-carousel" data-carousel="visha">
-              <button class="carousel-btn prev" type="button" aria-label="Previous ViSha GIF">
+
+              <button
+                class="carousel-btn prev"
+                type="button"
+                aria-label="Previous ViSha GIF"
+              >
                 &#10094;
               </button>
 
@@ -146,41 +316,69 @@
                 />
               </div>
 
-              <button class="carousel-btn next" type="button" aria-label="Next ViSha GIF">
+              <button
+                class="carousel-btn next"
+                type="button"
+                aria-label="Next ViSha GIF"
+              >
                 &#10095;
               </button>
+
             </div>
           </div>
+
         </div>
       </div>
     </section>
 
+
+    <!-- =========================================================
+         Dataset
+    ========================================================== -->
     <section class="section">
       <h2>Dataset</h2>
 
       <div class="plain-figure-block figure-90">
-        <img src="assets/dataset.png" alt="Dataset examples and annotations" class="plain-figure-image" />
+        <img
+          src="assets/dataset.png"
+          alt="Dataset examples and annotations"
+          class="plain-figure-image"
+        />
       </div>
 
       <p>
-        To support training and evaluation, we introduce the first dataset curated for cast and attached shadow detection, with 1,458 images collected from three benchmarks. Each image includes a normal map, light direction, and cast, attached, and undefined shadow annotations.
+        To support training and evaluation, we introduce the first dataset
+        curated for cast and attached shadow detection, with 1,458 images
+        collected from three benchmarks. Each image includes a normal map,
+        light direction, and cast, attached, and undefined shadow annotations.
       </p>
     </section>
 
+
+    <!-- =========================================================
+         Citation
+    ========================================================== -->
     <section class="section" id="citation">
       <h2>Citation</h2>
+
       <pre><code>@misc{hu2026castattachedshadowdetection,
-      title={Cast and Attached Shadow Detection via Iterative Light and Geometry Reasoning}, 
+      title={Cast and Attached Shadow Detection via Iterative Light and Geometry Reasoning},
       author={Shilin Hu and Jingyi Xu and Sagnik Das and Dimitris Samaras and Hieu Le},
       year={2026},
       eprint={2512.06179},
       archivePrefix={arXiv},
       primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2512.06179}, 
+      url={https://arxiv.org/abs/2512.06179},
 }</code></pre>
+
     </section>
+
   </div>
 
+
+  <!-- =========================================================
+       GIF Carousel Script
+  ========================================================== -->
   <script>
     const carousels = {
       sbu: {
@@ -193,6 +391,7 @@
         ],
         basePath: "assets/gif/SBU-TimeLapse/"
       },
+
       visha: {
         imageId: "carousel-image-visha",
         files: [
@@ -206,10 +405,12 @@
       }
     };
 
+
     const carouselState = {
       sbu: 0,
       visha: 0
     };
+
 
     function updateCarousel(name) {
       const config = carousels[name];
@@ -221,24 +422,42 @@
       image.alt = file.replace(".gif", "");
     }
 
+
     function stepCarousel(name, direction) {
       const config = carousels[name];
       const total = config.files.length;
-      carouselState[name] = (carouselState[name] + direction + total) % total;
+
+      carouselState[name] =
+        (carouselState[name] + direction + total) % total;
+
       updateCarousel(name);
     }
 
+
     document.querySelectorAll(".gif-carousel").forEach((carousel) => {
       const name = carousel.dataset.carousel;
-      const prevBtn = carousel.querySelector(".carousel-btn.prev");
-      const nextBtn = carousel.querySelector(".carousel-btn.next");
 
-      prevBtn.addEventListener("click", () => stepCarousel(name, -1));
-      nextBtn.addEventListener("click", () => stepCarousel(name, 1));
+      const prevBtn =
+        carousel.querySelector(".carousel-btn.prev");
+
+      const nextBtn =
+        carousel.querySelector(".carousel-btn.next");
+
+      prevBtn.addEventListener(
+        "click",
+        () => stepCarousel(name, -1)
+      );
+
+      nextBtn.addEventListener(
+        "click",
+        () => stepCarousel(name, 1)
+      );
     });
+
 
     updateCarousel("sbu");
     updateCarousel("visha");
   </script>
+
 </body>
 </html>
