@@ -85,14 +85,11 @@ body {
 .hero-logos {
   display: grid;
 
-  grid-template-columns:
-    minmax(0, 1fr)
-    minmax(180px, 0.9fr)
-    minmax(0, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 
   align-items: center;
 
-  gap: 42px;
+  gap: 36px;
 
   width: 100%;
 
@@ -103,7 +100,7 @@ body {
 .logo-slot {
   min-width: 0;
 
-  height: 82px;
+  height: 90px;
 
   display: flex;
 
@@ -113,7 +110,7 @@ body {
 
 
 .eccv-slot {
-  height: 110px;
+  height: 145px;
 }
 
 
@@ -145,11 +142,11 @@ body {
 }
 
 
-/* Conference logo */
+/* ECCV logo — enlarged by ~33% per dimension */
 
 .eccv-logo {
-  max-width: 210px;
-  max-height: 105px;
+  max-width: 280px;
+  max-height: 140px;
 }
 
 
@@ -702,15 +699,18 @@ code {
   .sbu-logo,
   .unc-logo {
     max-width: 220px;
-
     max-height: 50px;
   }
 
 
-  .eccv-logo {
-    max-width: 180px;
+  .eccv-slot {
+    height: 120px;
+  }
 
-    max-height: 92px;
+
+  .eccv-logo {
+    max-width: 230px;
+    max-height: 115px;
   }
 }
 
@@ -763,22 +763,19 @@ code {
 
   .sbu-logo {
     max-width: 230px;
-
     max-height: 47px;
   }
 
 
   .unc-logo {
     max-width: 220px;
-
     max-height: 47px;
   }
 
 
   .eccv-logo {
-    max-width: 170px;
-
-    max-height: 90px;
+    max-width: 210px;
+    max-height: 110px;
   }
 
 
