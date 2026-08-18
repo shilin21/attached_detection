@@ -85,32 +85,37 @@ body {
 .hero-logos {
   display: grid;
 
-  /* Give ECCV slightly more horizontal space */
+  /* Slightly more room for the larger ECCV logo */
   grid-template-columns: 1fr 1.35fr 1fr;
 
-  gap: 24px;
+  gap: 20px;
 
   width: 100%;
 
-  /* Align all logos along the bottom */
+  /* Align all three logos along their bottom */
   align-items: end;
 
-  /* Keep header compact */
-  margin: 0 auto 22px;
+  /* Logo -> title spacing */
+  margin: 0 auto 25px;
 }
 
 
-/* Same compact height for all three logo slots */
+/*
+Keep the logo row compact.
+All three slots use the same height so they share a baseline.
+*/
 .logo-slot,
 .eccv-slot {
   min-width: 0;
 
-  height: 125px;
+  height: 115px;
 
   display: flex;
 
   align-items: flex-end;
   justify-content: center;
+
+  overflow: visible;
 }
 
 
@@ -143,11 +148,25 @@ body {
 }
 
 
-/* Larger ECCV logo */
+/*
+ECCV is intentionally larger.
+
+The transform enlarges the visible logo without forcing
+the logo row itself to become significantly taller.
+
+translateY moves the visible ECCV artwork slightly downward
+to better match the visual baseline of the university logos.
+*/
 
 .eccv-logo {
-  max-width: 330px;
-  max-height: 125px;
+  width: 100%;
+
+  max-width: 335px;
+  max-height: 120px;
+
+  transform: translateY(10px) scale(1.22);
+
+  transform-origin: center bottom;
 }
 
 
@@ -156,7 +175,8 @@ body {
 ========================================================= */
 
 .hero h1 {
-  margin: 0 0 20px;
+  /* Title -> author spacing */
+  margin: 0 0 15px;
 
   font-size: 2.4rem;
 
@@ -701,7 +721,7 @@ code {
 
   .logo-slot,
   .eccv-slot {
-    height: 110px;
+    height: 105px;
   }
 
 
@@ -718,8 +738,10 @@ code {
 
 
   .eccv-logo {
-    max-width: 280px;
-    max-height: 110px;
+    max-width: 275px;
+    max-height: 105px;
+
+    transform: translateY(7px) scale(1.16);
   }
 }
 
@@ -753,7 +775,10 @@ code {
   }
 
 
-  /* Stack logos on mobile */
+  /*
+  Stack logos vertically on mobile.
+  Bottom alignment and ECCV transform are no longer needed.
+  */
 
   .hero-logos {
     grid-template-columns: 1fr;
@@ -785,8 +810,12 @@ code {
 
 
   .eccv-logo {
-    max-width: 210px;
-    max-height: 110px;
+    width: auto;
+
+    max-width: 220px;
+    max-height: 115px;
+
+    transform: none;
   }
 
 
@@ -794,6 +823,8 @@ code {
 
   .hero h1 {
     font-size: 1.8rem;
+
+    margin-bottom: 15px;
   }
 
 
