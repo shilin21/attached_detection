@@ -85,32 +85,32 @@ body {
 .hero-logos {
   display: grid;
 
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  /* Give ECCV slightly more horizontal space */
+  grid-template-columns: 1fr 1.35fr 1fr;
 
-  align-items: center;
-
-  gap: 36px;
+  gap: 24px;
 
   width: 100%;
 
-  margin: 0 auto 28px;
+  /* Align all logos along the bottom */
+  align-items: end;
+
+  /* Keep header compact */
+  margin: 0 auto 22px;
 }
 
 
-.logo-slot {
+/* Same compact height for all three logo slots */
+.logo-slot,
+.eccv-slot {
   min-width: 0;
 
-  height: 90px;
+  height: 125px;
 
   display: flex;
 
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
-}
-
-
-.eccv-slot {
-  height: 145px;
 }
 
 
@@ -128,25 +128,26 @@ body {
 
 .uni-logo {
   max-width: 100%;
-  max-height: 58px;
 }
 
 
 .sbu-logo {
   max-width: 275px;
+  max-height: 62px;
 }
 
 
 .unc-logo {
-  max-width: 270px;
+  max-width: 265px;
+  max-height: 67px;
 }
 
 
-/* ECCV logo — enlarged by ~33% per dimension */
+/* Larger ECCV logo */
 
 .eccv-logo {
-  max-width: 280px;
-  max-height: 140px;
+  max-width: 330px;
+  max-height: 125px;
 }
 
 
@@ -692,25 +693,33 @@ code {
 @media (max-width: 850px) {
 
   .hero-logos {
-    gap: 24px;
+    grid-template-columns: 1fr 1.3fr 1fr;
+
+    gap: 18px;
   }
 
 
-  .sbu-logo,
-  .unc-logo {
-    max-width: 220px;
-    max-height: 50px;
-  }
-
-
+  .logo-slot,
   .eccv-slot {
-    height: 120px;
+    height: 110px;
+  }
+
+
+  .sbu-logo {
+    max-width: 220px;
+    max-height: 52px;
+  }
+
+
+  .unc-logo {
+    max-width: 215px;
+    max-height: 57px;
   }
 
 
   .eccv-logo {
-    max-width: 230px;
-    max-height: 115px;
+    max-width: 280px;
+    max-height: 110px;
   }
 }
 
@@ -758,6 +767,8 @@ code {
   .logo-slot,
   .eccv-slot {
     height: auto;
+
+    align-items: center;
   }
 
 
