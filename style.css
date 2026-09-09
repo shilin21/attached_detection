@@ -296,8 +296,7 @@ to better match the visual baseline of the university logos.
 }
 
 
-.links a,
-.link-disabled {
+.links a {
   display: inline-flex;
 
   align-items: center;
@@ -310,10 +309,7 @@ to better match the visual baseline of the university logos.
   border-radius: 999px;
 
   font-weight: 600;
-}
 
-
-.links a {
   text-decoration: none;
 
   color: white;
@@ -333,19 +329,6 @@ to better match the visual baseline of the university logos.
   opacity: 0.96;
 
   background: var(--accent-dark);
-}
-
-
-.link-disabled {
-  color: var(--muted);
-
-  background: #eef2f7;
-
-  border: 1px solid var(--line);
-
-  cursor: default;
-
-  user-select: none;
 }
 
 
@@ -663,6 +646,81 @@ to better match the visual baseline of the university logos.
 
 
 /* =========================================================
+   Dataset
+========================================================= */
+
+#dataset {
+  scroll-margin-top: 24px;
+}
+
+
+.dataset-actions {
+  display: flex;
+
+  justify-content: center;
+
+  margin: 22px 0 18px;
+}
+
+
+.dataset-download {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 44px;
+
+  padding: 10px 20px;
+
+  border-radius: 999px;
+
+  color: #ffffff;
+
+  background: var(--accent);
+
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.15s ease,
+    opacity 0.15s ease,
+    background 0.15s ease;
+}
+
+
+.dataset-download:hover {
+  transform: translateY(-1px);
+
+  opacity: 0.96;
+
+  background: var(--accent-dark);
+}
+
+
+.dataset-note {
+  color: var(--muted);
+}
+
+
+.dataset-note a {
+  color: var(--accent);
+
+  font-weight: 600;
+
+  text-decoration: none;
+}
+
+
+.dataset-note a:hover {
+  color: var(--accent-dark);
+
+  text-decoration: underline;
+}
+
+
+/* =========================================================
    Captions
 ========================================================= */
 
@@ -915,8 +973,14 @@ code {
 
   /* Links */
 
-  .links a,
-  .link-disabled {
+  .links a {
+    width: 100%;
+  }
+
+
+  /* Dataset */
+
+  .dataset-download {
     width: 100%;
   }
 }
