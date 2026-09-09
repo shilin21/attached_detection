@@ -108,9 +108,9 @@
           Code
         </a>
 
-        <span class="link-disabled" aria-disabled="true">
-          Dataset (TBA)
-        </span>
+        <a href="#dataset">
+          Dataset
+        </a>
 
         <a href="#citation">
           BibTeX
@@ -337,7 +337,7 @@
     <!-- =========================================================
          Dataset
     ========================================================== -->
-    <section class="section">
+    <section class="section" id="dataset">
       <h2>Dataset</h2>
 
       <div class="plain-figure-block figure-90">
@@ -349,10 +349,47 @@
       </div>
 
       <p>
-        To support training and evaluation, we introduce the first dataset
-        curated for cast and attached shadow detection, with 1,458 images
-        collected from three benchmarks. Each image includes a normal map,
-        light direction, and cast, attached, and undefined shadow annotations.
+        We introduce a dataset of 1,458 images curated for cast and attached
+        shadow detection. Each sample includes an RGB image, a relative depth
+        map, raw light information, an object mask, and separate cast, attached,
+        and undefined shadow annotations. Surface normals can be computed from
+        the provided depth maps.
+      </p>
+
+      <p class="dataset-actions">
+        <a
+          class="dataset-download"
+          href="https://drive.google.com/drive/folders/1fVUd2Srj9Kaf-3ytJLmCf7kGRQY3Pvic?usp=sharing"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Download Dataset
+        </a>
+      </p>
+
+      <p class="dataset-note">
+        This dataset is derived from WSRD, SOBA, and CUHK-Shadow and is provided
+        for noncommercial academic research. The original source datasets retain
+        their respective rights and terms:
+        <a
+          href="https://github.com/fvasluianu97/WSRD-DNSR"
+          target="_blank"
+          rel="noopener noreferrer"
+        >WSRD</a>
+        is under CC BY-NC-SA 4.0,
+        <a
+          href="https://github.com/xw-hu/CUHK-Shadow"
+          target="_blank"
+          rel="noopener noreferrer"
+        >CUHK-Shadow</a>
+        is under CC BY-NC-SA 3.0, and
+        <a
+          href="https://github.com/stevewongv/SSIS"
+          target="_blank"
+          rel="noopener noreferrer"
+        >SOBA</a>
+        is distributed through its official public research release.
+        Please cite accordingly when using this dataset.
       </p>
     </section>
 
